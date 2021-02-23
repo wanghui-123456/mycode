@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   // 1. 利用函数求任意个数的最大值
+      //   function getMax() {
+      //     //arguments 就是参数的意思，当做一个空数组，用来接收实参。
+      //     var max = arguments[0];
+      //     for (var i = 1; i < arguments.length; i++) {
+      //       if (max < arguments[i]) {
+      //         max = arguments[i];
+      //       }
+      //     }
+      //     return max;
+      //   }
+      //   console.log(getMax(1, 2, 3));
+      //   console.log(getMax(55, 46, 100, 101));
+      //   console.log(getMax(1, 9, 7, 8, 512, 4, 0));
+
+      //   //   2. 利用函数翻转数组
+      //   function reverse(arr) {
+      //     var Newarr = [];
+      //     for (var i = arr.length - 1; i >= 0; i--) {
+      //       Newarr[Newarr.length] = arr[i];
+      //     }
+      //     return Newarr;
+      //   }
+      //   var arr1 = reverse([1, 2, 3, 4, 5]);
+      //   console.log(arr1);
+      //   var arr2 = reverse(["we", "are", "family"]);
+      //   console.log(arr2);
+
+      //   // 3.利用函数封装冒泡排序算法
+      //   function sort(arr) {
+      //     for (var i = 1; i < arr.length; i++) {
+      //       for (var j = 0; j < arr.length - i; j++) {
+      //         if (arr[j] > arr[j + 1]) {
+      //           var temp = arr[j];
+      //           arr[j] = arr[j + 1];
+      //           arr[j + 1] = temp;
+      //         }
+      //       }
+      //     }
+      //     return arr;
+      //   }
+      //   var arr1 = sort([5, 3, 2, 4, 6]);
+      //   console.log(arr1);
+
+      //   //   4.函数封装判断闰年
+      //   function leapyear() {
+      //     if (year % 4 == 0 && year % 100 !== 0) {
+      //       ture=("您输入的年份是闰年");
+      //     }else{
+      //         ture=('您输入的年份是平年');
+      //     }
+      //     return ture;
+      //   }
+      //   var year = prompt("请输入年份");
+      //   alert (leapyear(year));
+
+      //   5.函数相互调用
+      function Febdays(){
+          var year=prompt('请输入年份');
+          if (leapyear(year)==true){
+              alert ('您输入的年份是闰年，2月有28天');
+          }else{
+              alert ('您输入的年份是平年，2月有29天');
+          }
+      }
+      Febdays();
+      function leapyear(year) {
+        var flag=false;
+         if (year % 4 == 0 && year % 100 !== 0) {
+           flag=true;
+         }
+         return flag;
+       }
+    </script>
+  </head>
+  <body></body>
+</html>
