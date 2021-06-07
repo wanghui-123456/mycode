@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //函数的实参可以是任意类型
+
+    function fn(r){  
+        return 3.14*r*r
+    }
+
+    var result=fn(4);  //1.实参为数值型
+    console.log(result);
+
+    function fn1(person){  
+        console.log("我叫"+person.name+","+"性别："+person.gender+","+"年龄："+person.age)
+    }
+
+    var obj={
+        name:'wh',
+        gender:'female',
+        age:18,
+        address:'beijing'
+    }
+    fn1(obj);  //2.实参为一个对象
+
+    function fn2(squre){
+        console.log("圆的面积为："+squre)
+    }
+
+    fn2(fn(4));  //3.实参为一个函数，注意这里传的是函数的返回值，若要传函数，应写为：fn2(fn)
+
+
+    //函数的返回值可以是任意类型
+
+    function fn3(){
+        alert ('函数开始执行');
+        for(var i=0;i<4;i++){ 
+            if(i==2){
+               // break;  //结束本次循环
+               // continue;  // 跳过本次循环
+               // return; // 结束整个函数，return后面的语句均不执行
+            } 
+            console.log(i)
+        }
+        alert('函数执行完毕!')
+    }
+
+    fn3();
+
+    function fn4(){
+        obj={
+            name:'qw'
+        }
+        // return(true) // 返回布尔型
+        return obj // 返回一个对象
+    }
+
+    console.log(fn4());
+
+    function fn5(){
+        function fn6(){
+            alert('我是fn6 函数')
+        }
+        return fn6 // 将fn6 函数对象作为返回值返回
+    }
+    
+    console.log(fn5());
+    console.log(fn5()()) //这句话相当于调用了fn6函数
+</script>
+<body>
+    
+</body>
+</html>
